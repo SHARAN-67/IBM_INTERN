@@ -96,6 +96,7 @@ router.put('/', (req, res) => {
 
 /* ---------------- DELETE ---------------- */
 
+// DELETE single Student
 router.delete('/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const before = students.length;
@@ -111,7 +112,7 @@ router.delete('/:id', (req, res) => {
     students
   });
 });
-
+ // DELETE Multiple Students
 router.delete('/', (req, res) => {
   const ids = Array.isArray(req.body) ? req.body : req.body?.ids;
 
